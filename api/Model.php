@@ -1,7 +1,7 @@
 <?php
 require_once 'Koneksi.php';
 
-// ============ MEMBER ============
+// MEMBER 
 function getMember() {
     $conn = getKoneksi();
     $stmt = $conn->query("SELECT * FROM member");
@@ -29,7 +29,7 @@ function deleteMember($id) {
     return $stmt->execute([$id]);
 }
 
-// ============ BUKU ============
+// BUKU 
 function getBuku() {
     $conn = getKoneksi();
     $stmt = $conn->query("SELECT * FROM buku");
@@ -57,7 +57,7 @@ function deleteBuku($id) {
     return $stmt->execute([$id]);
 }
 
-// ============ PEMINJAMAN ============
+// PEMINJAMAN 
 function getPeminjaman() {
     $conn = getKoneksi();
     $stmt = $conn->query("SELECT p.*, m.nama_member, b.judul_buku FROM peminjaman p JOIN member m ON p.id_member = m.id_member JOIN buku b ON p.id_buku = b.id_buku");

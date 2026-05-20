@@ -1,11 +1,10 @@
 <?php
 require 'Model.php';
-date_default_timezone_set('Asia/Makassar'); // Setting timezone BJM
+date_default_timezone_set('Asia/Makassar'); 
 
 $id = $_GET['id'] ?? null;
 $m = $id ? getMemberById($id) : null;
 
-// Mengisi nilai default form dengan data lama (jika edit) atau timestamp real-time (jika tambah)
 $nama = $m['nama_member'] ?? '';
 $nomor = $m['nomor_member'] ?? '';
 $alamat = $m['alamat'] ?? '';

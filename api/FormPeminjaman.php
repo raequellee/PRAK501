@@ -1,14 +1,14 @@
 <?php
 require 'Model.php';
-date_default_timezone_set('Asia/Makassar'); // Setting timezone BJM
+date_default_timezone_set('Asia/Makassar'); 
 
 $id = $_GET['id'] ?? null;
 $p = $id ? getPeminjamanById($id) : null;
-$members = getMember(); // Untuk dropdown pilihan
-$bukus = getBuku();     // Untuk dropdown pilihan
+$members = getMember(); 
+$bukus = getBuku();     
 
 $tgl_pinjam = $p['tgl_pinjam'] ?? date('Y-m-d');
-$tgl_kembali = $p['tgl_kembali'] ?? date('Y-m-d', strtotime('+7 days')); // Default pinjam 1 minggu
+$tgl_kembali = $p['tgl_kembali'] ?? date('Y-m-d', strtotime('+7 days')); 
 $id_member = $p['id_member'] ?? '';
 $id_buku = $p['id_buku'] ?? '';
 
