@@ -6,6 +6,10 @@
     },
     "routes": [
         {
+            "src": "/",
+            "dest": "/api/Member.php"
+        },
+        {
             "src": "/(.*)",
             "dest": "/api/$1"
         }
